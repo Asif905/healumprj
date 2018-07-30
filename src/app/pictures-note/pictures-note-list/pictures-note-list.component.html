@@ -1,0 +1,15 @@
+<div
+  style="cursor: pointer;margin-left: 25%"
+  class="list-group-item clearfix info">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ newNote.title }}</h4>
+    <p class="list-group-item-text">{{ newNote.description }}</p>
+  </div> 
+    <span class="pull-right">
+        <img
+          [src]="newNote.image"
+          alt="Image"
+          class="img-responsive"
+          style="max-height: 80px;">
+    </span>
+</div>

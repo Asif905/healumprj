@@ -9,17 +9,17 @@ import { NgForm } from '@angular/forms';
 export class TextNoteComponent implements OnInit {
 
   @ViewChild('addText') textNoteApp: NgForm;
-  notes = [];
+  notes = ['Dinner at 10 PM','Set Goals'];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
+  onTextSubmit(){
     let textAdded = this.textNoteApp.value.textnote;
-    this.notes.push(textAdded);
-    
+    this.notes.push(textAdded);    
+    this.textNoteApp.reset();
   }
 
 }

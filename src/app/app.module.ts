@@ -10,6 +10,9 @@ import { PicturesNoteComponent } from './pictures-note/pictures-note.component';
 import { DocumentNoteComponent } from './document-note/document-note.component';
 import { AppRoutingModule } from './app.routing.module';
 import { TextNoteListComponent } from './text-note/text-note-list/text-note-list.component';
+import { ArticlesNoteListComponent } from './articles-note/articles-note-list/articles-note-list.component';
+import { DocumentNoteListComponent } from './document-note/document-note-list/document-note-list.component';
+import { PicturesNoteListComponent } from './pictures-note/pictures-note-list/pictures-note-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { TextNoteListComponent } from './text-note/text-note-list/text-note-list
     ArticlesNoteComponent,
     PicturesNoteComponent,
     DocumentNoteComponent,
-    TextNoteListComponent
+    TextNoteListComponent,
+    ArticlesNoteListComponent,
+    DocumentNoteListComponent,
+    PicturesNoteListComponent
   ],
   imports: [
     BrowserModule,

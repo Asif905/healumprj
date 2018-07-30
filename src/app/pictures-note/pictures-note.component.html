@@ -1,22 +1,36 @@
 <div class="container">
-  <div class="row" style="margin-top: 5%; margin-left: 15%">
+  <div class="row" style="margin-top: 1%; margin-left: 15%">
     <div class="col-xs-12 col-sm-10 col-md-8">
-      <form>
+      <form (ngSubmit)="onPictureNoteSubmit()" #pictureNote="ngForm">
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" name="title" id="title" class="form-control">
+          <input type="text" name="title" id="title" class="form-control" ngModel required #titleName="ngModel">
+          <span class="help-block" *ngIf="!titleName.valid && titleName.touched">Title is empty</span>
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" id="description" cols="86" rows="5"></textarea>
+          <textarea name="description" id="description" cols="86" rows="3" ngModel required #descriptionName="ngModel"></textarea>
+          <span class="help-block" *ngIf="!descriptionName.valid && descriptionName.touched">Description is empty</span>
         </div>
         <div class="form-group">
           <label for="image">Add Picture
-            <input id="files-upload" type="file" multiple>
+            <input id="files-upload" type="file" (change)="readUrl($event)">
+            <img *ngIf ="url != undefined" [src]="url" style="max-width: 150px; max-height: 150px">
           </label>
         </div>
-        <button class="btn btn-primary">Save Note</button>
+        <button class="btn btn-primary" type="submit">Save Note</button>
       </form>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <app-pictures-note-list
+        *ngFor="let note of notes; let i = index"
+        [newNote]="note"
+      ></app-pictures-note-list>
     </div>
   </div>
 </div>
